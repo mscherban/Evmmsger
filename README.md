@@ -25,7 +25,7 @@ Simply clone this repository and import Evmmsger. Refer to test.py for an exampl
 
 	evm_output = dev1.readlines()   or   dev1.readlines() #to just use internally stored list output
     
-**5. printlines(list=read_list[])** - Print out a list of strings returned by readlines(), or call on it's own to print out the internally stored list from the last readlines().
+**5. printlines(read_list=[])** - Print out a list of strings returned by readlines(), or call on it's own to print out the internally stored list from the last readlines().
 
 	dev1.printlines(evm_output)   or   dev1.printlines() #to print internally stored list from last readlines()
     
