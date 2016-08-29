@@ -33,7 +33,8 @@ Simply clone this repository and import Evmmsger. Refer to test.py for an exampl
 
 	dev1.msg('Hello world')    #prints '/dev/ttyUSB1: Hello world'
     
-**7. match(str string_to_match, list evm_output=[])** - Returns the line which string_to_match was found in list evm_output=[] (which is also True). evm_output is optional, and if not passed it will parse the last read output from readlines(). Can be used for parsing output for conditionals. Returns False if it is not found. This is case sensitive.
+**7. match(str string_to_match, list evm_output=[])** - Returns the line which string_to_match was found in in list evm_output (which is also True). Passing a list is optional, and if not passed it will parse the last read output from readlines(). Can be used for parsing output for conditionals. Returns False if it is not found. This is case sensitive.
 
 	if dev1.match('BOOT COMPLETE'):
     	print('Boot Completed')
+
