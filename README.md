@@ -8,7 +8,7 @@ Simply clone this repository and import Evmmsger. Refer to test.py for an exampl
 
 # Methods
 
-**1. Evmmsg(str 'device', baudrate=115200, timeout=1)** - Create the EVM message object. The only required parameter is the location of your serial device, such as '/dev/ttyUSB1'. Timeout will default to 1, but is the number of seconds that will elapse with no communication before Evmmsger.readlines() times out and returns.
+**1. Evmmsg(str 'name', int baudrate=115200, int timeout=1)** - Create the EVM message object. The only required parameter is the location of your serial device, such as '/dev/ttyUSB1'. Timeout will default to 1, but is the number of seconds that will elapse with no communication before Evmmsger.readlines() times out and returns.
 
 	dev1 = Evmmsger.Evmmsg('dev/ttyUSB1')
     
@@ -17,7 +17,7 @@ Simply clone this repository and import Evmmsger. Refer to test.py for an exampl
 
 	dev1.close()
     
-**3. write(str string_to_send, end='\r\n')** - Write a message to the EVM over serial port. This will automatically append a return-newline, unless you override it by passing end=''.
+**3. write(str string_to_send, str end='\r\n')** - Write a message to the EVM over serial port. This will automatically append a return-newline, unless you override it by passing end=''.
 
 	dev1.write('reboot')
     
@@ -25,7 +25,7 @@ Simply clone this repository and import Evmmsger. Refer to test.py for an exampl
 
 	evm_output = dev1.readlines()   or   dev1.readlines() #to just use internally stored list output
     
-**5. printlines(read_list=[])** - Print out a list of strings returned by readlines(), or call on it's own to print out the internally stored list from the last readlines().
+**5. printlines(list read_list=[])** - Print out a list of strings returned by readlines(), or call on it's own to print out the internally stored list from the last readlines().
 
 	dev1.printlines(evm_output)   or   dev1.printlines() #to print internally stored list from last readlines()
     
@@ -33,7 +33,7 @@ Simply clone this repository and import Evmmsger. Refer to test.py for an exampl
 
 	dev1.msg('Hello world')    #prints '/dev/ttyUSB1: Hello world'
     
-**7. match(str string_to_match, evm_output=[])** - Returns the line which string_to_match was found in list evm_output=[] (which is also True). evm_output is optional, and if not passed it will parse the last read output from readlines(). Can be used for parsing output for conditionals. Returns False if it is not found. This is case sensitive.
+**7. match(str string_to_match, list evm_output=[])** - Returns the line which string_to_match was found in list evm_output=[] (which is also True). evm_output is optional, and if not passed it will parse the last read output from readlines(). Can be used for parsing output for conditionals. Returns False if it is not found. This is case sensitive.
 
 	if dev1.match('BOOT COMPLETE'):
     	print('Boot Completed')
