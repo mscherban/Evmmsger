@@ -2,14 +2,14 @@
 
 import Evmmsger
 
-dev1 = Evmmsger.Evmmsg('/dev/ttyUSB1')
+evm1bmc = Evmmsger.Evmmsg('/dev/ttyUSB1')
 
-dev1.msg('Hello World!')
-dev1.write('reboot')
-dev1.readlines()
-dev1.printlines()
+evm1bmc.msg('Hello World!')
+evm1bmc.write('reboot')
+evm1bmc.readlines()
+evm1bmc.printlines()
 
-if dev1.match('BOOT COMPLETE'):
+if evm1bmc.match('BOOT COMPLETE'):
     print('boot completed!')
 
-dev1.close()
+evm1bmc.close()
