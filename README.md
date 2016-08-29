@@ -4,7 +4,7 @@ Provide a Python EVM class  to easily communicate through a serial port. This is
 
 # How to use
 
-Simply clone this repository and import Evmmsger. Refer to test.py for an example.
+Simply clone this repository and import Evmmsger. Refer to test.py for an example. Needs to be ran with sudo or administer account.
 
 # Methods
 
