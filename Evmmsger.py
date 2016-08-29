@@ -7,9 +7,9 @@ class Evmmsg():
         self.read_list = ['', b'Do', b'a', b'read', b'first']
     def close(self):
         self.dev.close()
-    def write(self, string_to_send):
+    def write(self, string_to_send, end='\r\n'):
+        string_to_send += end
         self.dev.write(bytes(string_to_send, encoding='ascii'))
-        self.dev.write(b'\r\n')
     def readlines(self):
         self.read_list = ['', b'Nothing', b'read.']
         self.read_list = self.dev.readlines()
