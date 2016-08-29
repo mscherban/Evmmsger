@@ -1,8 +1,8 @@
 import serial
 
 class Evmmsg():
-    def __init__(self, name, baudratex=115200, timeoutx=1):
-        self.dev = serial.Serial(name, baudratex, timeout=timeoutx)
+    def __init__(self, name, baudrate=115200, timeout=1):
+        self.dev = serial.Serial(name, baudrate, timeout=timeout)
         self.name = name
         self.read_list = ['', b'Do', b'a', b'read', b'first']
     def close(self):
