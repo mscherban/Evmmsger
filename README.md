@@ -16,6 +16,10 @@ cd pyserial-3.1.1
 sudo python3 setup.py install
 ```
 
+If you want to log everything either use open() or use tee:
+
+	sudo ./test.py | tee log-1.log
+
 # Methods
 
 **1. Evmmsg(str 'name', int baudrate=115200, int timeout=1)** - Create the EVM message object. The only required parameter is the location of your serial device, such as '/dev/ttyUSB1'. Timeout will default to 1, but is the number of seconds that will elapse with no communication before Evmmsger.readlines() times out and returns. The baudrate by default is 115200 but is adjustable.
