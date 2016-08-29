@@ -1,10 +1,20 @@
 # Evmmsger
 
-Provide a Python EVM class  to easily communicate through a serial port. This is useful for scripting tasks that are tedious to do by hand.
+Provide a Python EVM class to easily communicate through a serial port. This is useful for scripting tasks that are tedious to do by hand.
 
 # How to use
 
 Simply clone this repository and import Evmmsger. Refer to test.py for an example. Needs to be ran with sudo or administer account.
+
+Requires Python3 and the pyserial module. Instructions here: http://pyserial.readthedocs.io/en/latest/pyserial.html
+
+Most successful method is installation through source:
+```
+wget https://github.com/pyserial/pyserial/releases/download/v3.1.1/pyserial-3.1.1.tar.gz
+tar -xzvf pyserial-3.1.1.tar.gz
+cd pyserial-3.1.1
+sudo python3 setup.py install
+```
 
 # Methods
 
