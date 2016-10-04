@@ -50,5 +50,13 @@ If you want to log everything either use open() or use tee:
 **7. match(str to_match, list evm_output=[])** - Returns the line which _to_match_ was found in in list _evm_output_ (which is also True). Passing a list is optional, and if not passed it will parse the last read output from readlines(). Can be used for parsing output for conditionals. Returns False if it is not found. This is case sensitive.
 
 	if dev1.match('BOOT COMPLETE'):
-    	print('Boot Completed')
+    	    print('Boot Completed')
 
+**8. wait_for_msg(str msg, int timeout=60, int debug=0)** - This will monitor the output and wait for string 'msg' to appear, returning True, otherwise returns False. Has a default monitor time of 60 seconds, and debugging can be enabled to see the output which is being monitored.
+
+	if evm1arm.wait_for_msg('Log-in'):
+	    print('At log-in prompt')
+	    
+**9. clear_input()** - Clears the input buffer.
+
+	evm1arm.clear_input()
