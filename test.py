@@ -9,7 +9,7 @@ evm1bmc.write('reboot')
 evm1bmc.readlines()
 evm1bmc.printlines()
 
-if evm1bmc.match('BOOT COMPLETE'):
+if evm1bmc.match_lines('BOOT COMPLETE'):
     print('boot completed!')
 
 evm1bmc.close()
